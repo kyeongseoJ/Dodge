@@ -16,6 +16,7 @@ public class PlayerController : MonoBehaviour
     {
         // 게임 오브젝트에서 Rigidbody 컴포넌트를 찾아 playerRigidbody에 할당
         playerRigidbody = GetComponent<Rigidbody>();
+
     }
 
     // Update is called once per frame
@@ -63,7 +64,7 @@ public class PlayerController : MonoBehaviour
     
     }
 
-    void Die() // 플레이어 비활성화
+    public void Die() // 플레이어 비활성화
     {
         my.SetActive(false); // GameObject my : G 대문자 = 클래스
         // 편법? 좀더 간소화된 방법!
