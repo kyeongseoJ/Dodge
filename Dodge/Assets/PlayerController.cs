@@ -24,8 +24,22 @@ public class PlayerController : MonoBehaviour
         // 수평축(Horizontal)과 수직축(Vertical)의 입력값을 감지해서 저장 
         float xInput = Input.GetAxis("Horizontal");
         float zInput = Input.GetAxis("Vertical");
+
+        //실제 이동 속도를 입력값과 이동속력을 사용해 결정
+        float xSpeed = xInput * speed;
+        float zSpeed = zInput * speed;
+
+        // Vector3 속도를 (xSpeed, 0f, zSpeed)생성
+        Vector3 newVelocity = new Vector3(xSpeed, 0f, zSpeed);
+        // Rigidbody의 속도에 newVelocity 할당
+        playerRigidbody.velocity = newVelocity;
+
+        // 한줄 축약 버전
+        // playerRigidbody.velocity = new Vector3(xInput * speed, 0f, zInput * speed);
+
     }
 
+    // 무중력 움직임
     void DirectInput()
     {
      
