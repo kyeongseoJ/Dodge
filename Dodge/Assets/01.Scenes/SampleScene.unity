@@ -1245,7 +1245,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerRigidbody: {fileID: 1493043913}
-  speed: 8
+  speed: 9
   my: {fileID: 1493043908}
 --- !u!1001 &1523841914
 PrefabInstance:
@@ -1434,6 +1434,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2790faea0d9e7c4c862011e4725a2a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameOverText: {fileID: 1569360067}
+  timeText: {fileID: 1384943841}
+  recode: {fileID: 1932938876}
 --- !u!4 &1855488295
 Transform:
   m_ObjectHideFlags: 0

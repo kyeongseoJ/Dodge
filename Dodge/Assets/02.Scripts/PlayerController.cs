@@ -67,6 +67,12 @@ public class PlayerController : MonoBehaviour
     public void Die() // 플레이어 비활성화
     {
         my.SetActive(false); // GameObject my : G 대문자 = 클래스
+
+        // 씬에 존재하는 GameManager 타입의 오브젝트를 찾아서 가져오기 : 총알 생성기 할때도 유사한 문법 사용함 
+        GameManager gameManager = FindObjectOfType<GameManager>();
+        // EndGame 실행해서 누적시간 멈춤
+        gameManager.EndGame();
+
         // 편법? 좀더 간소화된 방법!
         // gameObject.SetActive(false); // gameObject : g 소문자 = 변수 유니티(=컴파일러)가 자동으로 지정해준다. 값 할당도 유니티가 알아서!
     }
