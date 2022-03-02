@@ -1436,7 +1436,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameOverText: {fileID: 1569360067}
   timeText: {fileID: 1384943841}
-  recode: {fileID: 1932938876}
+  recordText: {fileID: 1932938876}
 --- !u!4 &1855488295
 Transform:
   m_ObjectHideFlags: 0
