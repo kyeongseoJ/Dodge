@@ -8,7 +8,7 @@ public class Rotator : MonoBehaviour
     public float rotationSpeed = 60f;
     void Update()
     {
-        // Rotate ¸Ş¼­µå : ÀÔ·Â°ª(¸Å°³º¯¼ö)·Î  X, Y, Z Ãà¿¡ ´ëÇÑ  È¸Àü°ªÀ» ¹Ş°í ÇöÀç È¸Àü»óÅÂ¿¡¼­ ÀÔ·ÂµÈ °ª¸¸Å­ »ó´ëÀûÀ¸·Î ´õ È¸ÀüÇÑ´Ù.
+        // Rotate ë©”ì„œë“œ : ì…ë ¥ê°’(ë§¤ê°œë³€ìˆ˜)ë¡œ  X, Y, Z ì¶•ì— ëŒ€í•œ  íšŒì „ê°’ì„ ë°›ê³  í˜„ì¬ íšŒì „ìƒíƒœì—ì„œ ì…ë ¥ëœ ê°’ë§Œí¼ ìƒëŒ€ì ìœ¼ë¡œ ë” íšŒì „í•œë‹¤.
         transform.Rotate(0f, rotationSpeed*Time.deltaTime, 0f);
     }
 }

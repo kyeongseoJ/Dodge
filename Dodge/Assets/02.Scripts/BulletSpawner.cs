@@ -4,66 +4,66 @@ using UnityEngine;
 
 public class BulletSpawner : MonoBehaviour
 {
-    // »ı¼ºÇÒ Åº¾ËÀÇ ¿øº» ÇÁ¸®ÆÕ 
+    // ìƒì„±í•  íƒ„ì•Œì˜ ì›ë³¸ í”„ë¦¬íŒ¹ 
     public GameObject bulletPrefab;
 
-    // ÃÖ¼Ò »ı¼º ÁÖ±â
+    // ìµœì†Œ ìƒì„± ì£¼ê¸°
     public float spawnRateMin = 0.5f;
-    // ÃÖ´ë »ı¼º ÁÖ±â
+    // ìµœëŒ€ ìƒì„± ì£¼ê¸°
     public float spawnRateMax = 3f;
     
-    // ½ÇÁ¦ »ı¼º ÁÖ±â 
+    // ì‹¤ì œ ìƒì„± ì£¼ê¸° 
     private float spawnRate;
-    // ÃÖ±Ù »ı¼º ½ÃÁ¡¿¡¼­ Áö³­ ½Ã°£
+    // ìµœê·¼ ìƒì„± ì‹œì ì—ì„œ ì§€ë‚œ ì‹œê°„
     private float timeAfterSpawn; 
 
-    // ¹ß»çÇÒ ´ë»ó : º¯¼ö¼±¾ğ
+    // ë°œì‚¬í•  ëŒ€ìƒ : ë³€ìˆ˜ì„ ì–¸
     private Transform target;
 
-    // ÀÓ½Ã ½Ã°£ ´©Àû È®ÀÎ¿ë º¯¼ö
+    // ì„ì‹œ ì‹œê°„ ëˆ„ì  í™•ì¸ìš© ë³€ìˆ˜
     // float sumTime = 0;
 
     void Start()
     {
-        //ÃÖ±Ù »ı¼º ÀÌÈÄ¿¡ ´©Àû½Ã°£À» 0À¸·Î ÃÊ±âÈ­
+        //ìµœê·¼ ìƒì„± ì´í›„ì— ëˆ„ì ì‹œê°„ì„ 0ìœ¼ë¡œ ì´ˆê¸°í™”
         timeAfterSpawn = 0f;
-        // Åº¾Ë »ı¼º °£°İÀ» spawnRateMin°ú spawnRateMax»çÀÌ¿¡¼­ ·£´ı °ª ÁöÁ¤
+        // íƒ„ì•Œ ìƒì„± ê°„ê²©ì„ spawnRateMinê³¼ spawnRateMaxì‚¬ì´ì—ì„œ ëœë¤ ê°’ ì§€ì •
         spawnRate = Random.Range(spawnRateMin, spawnRateMax);
 
-        // PlayerController ÄÄÆ÷³ÍÆ®¸¦ °¡Áø °ÔÀÓ ¿ÀºêÁ§Æ®¸¦ Ã£¾Æ¼­ ±× ¿ÀºêÁ§Æ®ÀÇ À§Ä¡°ªÀ» °¡Á®¿À¶õ ÀÇ¹Ì
+        // PlayerController ì»´í¬ë„ŒíŠ¸ë¥¼ ê°€ì§„ ê²Œì„ ì˜¤ë¸Œì íŠ¸ë¥¼ ì°¾ì•„ì„œ ê·¸ ì˜¤ë¸Œì íŠ¸ì˜ ìœ„ì¹˜ê°’ì„ ê°€ì ¸ì˜¤ë€ ì˜ë¯¸
         target = FindObjectOfType<PlayerController>().transform;
     }
 
     
     void Update()
     {
-        // timeAfterSpawn °»½Å : timeAfterSpawn¿¡ ¾ó¸¶³ª Áö³µ´ÂÁö ´©Àû½Ã°£À» ´ã¾ÆÁÜ 
+        // timeAfterSpawn ê°±ì‹  : timeAfterSpawnì— ì–¼ë§ˆë‚˜ ì§€ë‚¬ëŠ”ì§€ ëˆ„ì ì‹œê°„ì„ ë‹´ì•„ì¤Œ 
         timeAfterSpawn += Time.deltaTime;
 
-        // ÃÖ±Ù »ı¼º ½ÃÁ¡¿¡¼­ºÎÅÍ ´©ÀûµÈ ½Ã°£ÀÌ »ı¼º ÁÖ±âº¸´Ù Å©°Å³ª °°´Ù¸é ½ÃÀÛÀ» ÇÒ°Å´Ù.
+        // ìµœê·¼ ìƒì„± ì‹œì ì—ì„œë¶€í„° ëˆ„ì ëœ ì‹œê°„ì´ ìƒì„± ì£¼ê¸°ë³´ë‹¤ í¬ê±°ë‚˜ ê°™ë‹¤ë©´ ì‹œì‘ì„ í• ê±°ë‹¤.
         if(timeAfterSpawn >= spawnRate)
         {
-        // bullet »ı¼º ÃÊ´ç 60°³¾¿ »ı¼ºµÇ°í ÀÖ´Ù.
-        // bullet PrefabÀÇ º¹Á¦º»À» À§Ä¡¿Í È¸Àü ¼³Á¤À» ÁÖ°í »ı¼º
+        // bullet ìƒì„± ì´ˆë‹¹ 60ê°œì”© ìƒì„±ë˜ê³  ìˆë‹¤.
+        // bullet Prefabì˜ ë³µì œë³¸ì„ ìœ„ì¹˜ì™€ íšŒì „ ì„¤ì •ì„ ì£¼ê³  ìƒì„±
         GameObject bullet = Instantiate(bulletPrefab, transform.position, transform.rotation);
 
-        // »ı¼ºµÈ bullet °ÔÀÓ ¿ÀºêÁ§Æ®¿¡ Á¤¸é¹æÇâ(=Z°ª)ÀÌ target(=Player)¸¦ ÇâÇÏµµ·Ï È¸Àü
+        // ìƒì„±ëœ bullet ê²Œì„ ì˜¤ë¸Œì íŠ¸ì— ì •ë©´ë°©í–¥(=Zê°’)ì´ target(=Player)ë¥¼ í–¥í•˜ë„ë¡ íšŒì „
         bullet.transform.LookAt(target);
 
 
-        // ´ÙÀ½¹ø »ı¼º °£°İÀ» spawnRateMin, spawnRateMax »çÀ×¿¡¼­ ÁöÁ¤
+        // ë‹¤ìŒë²ˆ ìƒì„± ê°„ê²©ì„ spawnRateMin, spawnRateMax ì‚¬ì‰ì—ì„œ ì§€ì •
         spawnRate = Random.Range(spawnRateMin, spawnRateMax);
 
-        // ´©ÀûµÈ ½Ã°£À» ¸®¼Â
+        // ëˆ„ì ëœ ì‹œê°„ì„ ë¦¬ì…‹
         timeAfterSpawn = 0f;
 
         }
 
         //float time = Time.deltaTime;
         //sumTime += time;
-        //Debug.Log("ÇÁ·¹ÀÓ´ç ½Ã°£ : " + time);
-        //Debug.Log("ÇöÀç ÇÃ·¹ÀÌ ½Ã°£ : " + (int)sumTime);
+        //Debug.Log("í”„ë ˆì„ë‹¹ ì‹œê°„ : " + time);
+        //Debug.Log("í˜„ì¬ í”Œë ˆì´ ì‹œê°„ : " + (int)sumTime);
 
-        ////Debug.Log(Time.deltaTime); // ÇÑÇÁ·¹ÀÓ´ç Àç»ı½Ã°£ È®ÀÎ °¡´É
+        ////Debug.Log(Time.deltaTime); // í•œí”„ë ˆì„ë‹¹ ì¬ìƒì‹œê°„ í™•ì¸ ê°€ëŠ¥
     }
 }
