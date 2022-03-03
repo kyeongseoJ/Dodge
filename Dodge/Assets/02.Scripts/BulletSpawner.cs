@@ -51,7 +51,7 @@ public class BulletSpawner : MonoBehaviour
         bullet.transform.LookAt(target);
 
 
-        // 다음번 생성 간격을 spawnRateMin, spawnRateMax 사잉에서 지정
+        // 다음번 생성 간격을 spawnRateMin, spawnRateMax 사이에서 지정
         spawnRate = Random.Range(spawnRateMin, spawnRateMax);
 
         // 누적된 시간을 리셋

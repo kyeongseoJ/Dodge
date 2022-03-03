@@ -28,7 +28,7 @@ public class Bullet : MonoBehaviour
             // 상대방(충돌한) 게임 오브젝트에서 PlayerController 컴포넌트 가져오기
             PlayerController playerController = other.GetComponent<PlayerController>();
 
-            // 상대방으로부터 PlayerController 컴포넌트를 가오는데 성공했다면..?
+            // 상대방으로부터 PlayerController 컴포넌트를 가져오는데 성공했다면..?
             if (playerController != null) // 비어있지않다면 {}안의 내용 실행
             {
                 // playerController 컴포넌트의 Die() 매서드 실행
@@ -36,10 +36,4 @@ public class Bullet : MonoBehaviour
             }
         }
     }
-    
-    void Update()
-    {
-        
-    }
-        
 }
